@@ -19,6 +19,19 @@
 *.tar.gz
 *.rar
 
+# Directories of compiled files
+out/
+dist/
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Minecraft modding specific files & directories
+.gradle/
+build/
+run/
+.fabric/
+
+#OS specific files
+.DS_Store
