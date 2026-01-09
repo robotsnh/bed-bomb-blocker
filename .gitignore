@@ -30,9 +30,19 @@ run/
 hs_err_pid*
 replay_pid*
 
+#Eclipse specific stuff
+.metadata/
+.classpath
+.project
+.settings/
+*.launch
+*.tmp
+*.bak
+
 # Minecraft modding specific files & directories
 .gradle/
 .fabric/
+remappedSrc/
 
 #OS specific files
 .DS_Store
