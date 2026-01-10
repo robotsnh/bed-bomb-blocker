@@ -10,20 +10,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: validate gradle wrapper
+      - name: Validate the Gradle wrapper
         uses: gradle/actions/wrapper-validation@v4
-      - name: setup jdk
+      - name: Setup the JDK
         uses: actions/setup-java@v4
         with:
           java-version: '23'
           distribution: 'oracle'
-      - name: make gradle wrapper executable
+      - name: Make the Gradle wrapper executable
         run: chmod +x ./gradlew
-      - name: build
+      - name: Build the project
         run: ./gradlew build
-      - name: capture build artifacts
+      - name: Capture the build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: Artifacts
