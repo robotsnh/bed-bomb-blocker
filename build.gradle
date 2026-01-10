@@ -48,7 +48,7 @@ java {
 
 	// Sets up Java with the newest version (basically a Python venv)
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(23)
+		languageVersion = JavaLanguageVersion.of(project.java_version)
 	}
 
 	sourceCompatibility = JavaVersion.VERSION_23
