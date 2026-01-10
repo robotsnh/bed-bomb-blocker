@@ -8,7 +8,7 @@ on: [pull_request, push]
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - name: checkout repository
         uses: actions/checkout@v4
@@ -17,8 +17,8 @@ jobs:
       - name: setup jdk
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
-          distribution: 'microsoft'
+          java-version: '23'
+          distribution: 'oracle'
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
       - name: build
