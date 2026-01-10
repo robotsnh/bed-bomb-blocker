@@ -26,6 +26,12 @@ bin/
 build/
 run/
 
+#IntelliJ stuff
+.idea/
+*.iml
+*.ipr
+*.iws
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
@@ -39,8 +45,20 @@ replay_pid*
 *.tmp
 *.bak
 
-# Minecraft modding specific files & directories
+#Gradle stuff
 .gradle/
+classes/
+
+#vscode
+.vscode
+
+#java stuff
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+
+# Minecraft modding specific files & directories
 .fabric/
 remappedSrc/
 
