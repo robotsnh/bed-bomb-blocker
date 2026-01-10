@@ -10,7 +10,7 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.nar
@@ -26,17 +26,17 @@ bin/
 build/
 run/
 
-#IntelliJ stuff
+# IntelliJ stuff
 .idea/
 *.iml
 *.ipr
 *.iws
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
 
-#Eclipse specific stuff
+# Eclipse specific stuff
 .metadata/
 .classpath
 .project
@@ -45,14 +45,14 @@ replay_pid*
 *.tmp
 *.bak
 
-#Gradle stuff
+# Gradle stuff
 .gradle/
 classes/
 
-#Visual Studio Code/GitHub Workspaces
+# Visual Studio Code/GitHub Workspaces
 .vscode
 
-#java stuff
+# Java-related stuff
 hs_err_*.log
 replay_*.log
 *.hprof
