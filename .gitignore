@@ -49,7 +49,7 @@ replay_pid*
 .gradle/
 classes/
 
-#vscode
+#Visual Studio Code/GitHub Workspaces
 .vscode
 
 #java stuff
