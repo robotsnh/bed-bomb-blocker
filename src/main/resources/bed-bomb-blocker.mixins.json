@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "net.robotsnh.minecraft_mods.bed_bomb_blocker.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ExampleMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
