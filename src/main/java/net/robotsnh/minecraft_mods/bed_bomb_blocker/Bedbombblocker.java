@@ -1,6 +1,6 @@
 package net.robotsnh.minecraft_mods.bed_bomb_blocker;
 
-import net.fabricmc.api.ModInitializer;
+import net.fabricmc.api.ModInitializer
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
