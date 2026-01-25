@@ -2,10 +2,11 @@ name: Verify and Deploy
 on:
   pull_request:
     branches: [ main ]
-  workflow_dispatch: # Allows you to manual-run from the Actions tab
+  workflow_dispatch:
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  # This is what causes the "Canceling" message - it's a feature, not a bug!
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 
 jobs:
@@ -50,11 +51,9 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      # Direct API call: No 'checkout' or '.git' folder needed!
-      - name: Enable Auto-Merge via API
-        run: |
-          curl -X POST \
-          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-          -H "Accept: application/vnd.github+json" \
-          https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/merge \
-          -d '{"merge_method":"merge"}'
+      # We tell 'gh' exactly which repo to talk to using the --repo flag
+      # This prevents the "not a git repository" error!
+      - name: Enable Auto-Merge
+        run: gh pr merge "${{ github.event.pull_request.number }}" --auto --merge --repo "${{ github.repository }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
