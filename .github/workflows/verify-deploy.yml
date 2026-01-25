@@ -1,0 +1,62 @@
+name: Verify and Deploy
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ main ]
+
+# This stops the "double-build" when you open a PR from dev to main
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        # Runs on both Ubuntu and Windows to catch platform-specific bugs
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate the Gradle wrapper
+        uses: gradle/actions/wrapper-validation@v4
+
+      - name: Setup Oracle JDK 23
+        uses: actions/setup-java@v4
+        with:
+          java-version: '23'
+          distribution: 'oracle'
+          cache: 'gradle'
+
+      - name: Make the Gradle wrapper executable
+        # This step only runs on Linux/macOS; Windows doesn't need chmod
+        if: runner.os != 'Windows'
+        run: chmod +x ./gradlew
+
+      - name: Build with Gradle
+        # On Windows, GitHub Actions automatically uses gradlew.bat
+        run: ./gradlew build
+
+      - name: Capture the build artifacts
+        if: matrix.os == 'ubuntu-latest' # Only upload once to save space
+        uses: actions/upload-artifact@v4
+        with:
+          name: BedBombBlocker-Artifacts
+          path: build/libs/
+
+  automerge:
+    needs: build
+    runs-on: ubuntu-latest
+    # This only triggers if the build passed AND it's a Pull Request
+    if: github.event_name == 'pull_request'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Auto-merge PR
+        run: gh pr merge --auto --merge "${{ github.event.pull_request.number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
