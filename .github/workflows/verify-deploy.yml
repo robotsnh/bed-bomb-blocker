@@ -1,13 +1,8 @@
 name: Verify and Deploy
 on:
-  push:
-    branches:
-      - main
-    # Only run on dev if it's a direct push AND NOT part of a PR 
-    # (Handling this via the 'if' condition in the jobs below is more reliable)
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch: # Allows you to manual-run from the Actions tab
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -15,8 +10,6 @@ concurrency:
 
 jobs:
   build:
-    # This logic prevents the job from running twice when you open a PR from dev
-    if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'push' && github.ref == 'refs/heads/dev' && github.event.pull_request == null)
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -25,7 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Validate the Gradle wrapper
+      - name: Validate Gradle
         uses: gradle/actions/wrapper-validation@v4
 
       - name: Setup Oracle JDK 23
@@ -35,18 +28,18 @@ jobs:
           distribution: 'oracle'
           cache: 'gradle'
 
-      - name: Make the Gradle wrapper executable
+      - name: Make Gradle executable
         if: runner.os != 'Windows'
         run: chmod +x ./gradlew
 
-      - name: Build with Gradle
+      - name: Build
         run: ./gradlew build
 
-      - name: Capture the build artifacts
+      - name: Capture Artifacts
         if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: BedBombBlocker-Artifacts
+          name: BedBombBlocker-JAR
           path: build/libs/
 
   automerge:
@@ -57,10 +50,11 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4 # This fixes the "not a git repository" error
-
-      - name: Auto-merge PR
-        run: gh pr merge --auto --merge "${{ github.event.pull_request.number }}"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # Direct API call: No 'checkout' or '.git' folder needed!
+      - name: Enable Auto-Merge via API
+        run: |
+          curl -X POST \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github+json" \
+          https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/merge \
+          -d '{"merge_method":"merge"}'
