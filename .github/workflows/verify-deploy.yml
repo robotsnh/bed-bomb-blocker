@@ -57,6 +57,9 @@ jobs:
       contents: write
       pull-requests: write
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # This fixes the "not a git repository" error
+
       - name: Auto-merge PR
         run: gh pr merge --auto --merge "${{ github.event.pull_request.number }}"
         env:
