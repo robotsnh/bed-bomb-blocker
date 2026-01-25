@@ -1,20 +1,24 @@
 name: Verify and Deploy
 on:
   push:
-    branches: [ dev ]
+    branches:
+      - main
+    # Only run on dev if it's a direct push AND NOT part of a PR 
+    # (Handling this via the 'if' condition in the jobs below is more reliable)
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
-# This stops the "double-build" when you open a PR from dev to main
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   build:
+    # This logic prevents the job from running twice when you open a PR from dev
+    if: github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'push' && github.ref == 'refs/heads/dev' && github.event.pull_request == null)
     strategy:
       matrix:
-        # Runs on both Ubuntu and Windows to catch platform-specific bugs
         os: [ubuntu-latest, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
@@ -32,16 +36,14 @@ jobs:
           cache: 'gradle'
 
       - name: Make the Gradle wrapper executable
-        # This step only runs on Linux/macOS; Windows doesn't need chmod
         if: runner.os != 'Windows'
         run: chmod +x ./gradlew
 
       - name: Build with Gradle
-        # On Windows, GitHub Actions automatically uses gradlew.bat
         run: ./gradlew build
 
       - name: Capture the build artifacts
-        if: matrix.os == 'ubuntu-latest' # Only upload once to save space
+        if: matrix.os == 'ubuntu-latest'
         uses: actions/upload-artifact@v4
         with:
           name: BedBombBlocker-Artifacts
@@ -50,7 +52,6 @@ jobs:
   automerge:
     needs: build
     runs-on: ubuntu-latest
-    # This only triggers if the build passed AND it's a Pull Request
     if: github.event_name == 'pull_request'
     permissions:
       contents: write
