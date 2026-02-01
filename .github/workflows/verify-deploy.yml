@@ -5,7 +5,6 @@ on:
   workflow_dispatch:
 
 concurrency:
-  # This is what causes the "Canceling" message - it's a feature, not a bug!
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 
