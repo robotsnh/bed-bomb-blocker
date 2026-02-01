@@ -51,9 +51,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      # We tell 'gh' exactly which repo to talk to using the --repo flag
-      # This prevents the "not a git repository" error!
-      - name: Enable Auto-Merge
-        run: gh pr merge "${{ github.event.pull_request.number }}" --auto --merge --repo "${{ github.repository }}"
+      - name: Enable Auto-Merge (Rebase Mode)
+        run: gh pr merge "${{ github.event.pull_request.number }}" --auto --rebase --repo "${{ github.repository }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
