@@ -1,6 +1,6 @@
 /*
 	A Minecraft mod that prevents beds from exploding in the Nether and the End.
-    Copyright (C) <2026> <robotsnh>
+    Copyright (C) <2026> <@robotsnh>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU Affero General Public License as published
