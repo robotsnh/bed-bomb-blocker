@@ -17,7 +17,7 @@ public class BedBlockMixin {
 
 	@Inject(at = @At("HEAD"),
 			method = "onUse"
-			) CallbackInfoReturnable<ActionResult> cir
+			) CallbackInfoReturnable<ActionResult> cir;
 	private void init(CallbackInfo info) {
 		LOGGER.info("Bed was interacted with!");
 	}
