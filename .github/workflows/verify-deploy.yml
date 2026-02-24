@@ -57,20 +57,3 @@ jobs:
         with:
           name: BedBombBlocker-JAR
           path: build/libs/
-
-  automerge:
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request' && github.event.pull_request.user.login == github.repository_owner
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - name: Enable Auto-Merge (Rebase Mode)
-        run: gh pr merge "${{ github.event.pull_request.number }}" --auto --rebase --repo "${{ github.repository }}"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Merge Pull Request
-        run: gh pr review --approve "${{ github.event.pull_request.number }}" --repo "${{ github.repository }}"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
