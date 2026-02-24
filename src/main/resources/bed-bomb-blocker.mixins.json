@@ -3,7 +3,7 @@
 	"package": "net.robotsnh.minecraft_mods.bed_bomb_blocker.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"BedBlockMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
