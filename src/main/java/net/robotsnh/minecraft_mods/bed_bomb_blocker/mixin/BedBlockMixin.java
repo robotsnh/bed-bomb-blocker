@@ -1,15 +1,19 @@
 package net.robotsnh.minecraft_mods.bed_bomb_blocker.mixin;
 
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.block.BedBlock;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(MinecraftServer.class)
+@Mixin(BedBlock.class)
 public class BedBlockMixin {
-	@Inject(at = @At("HEAD"), method = "loadLevel")
+	public static Logger LOGGER = LoggerFactory.getLogger("bed-bomb-blocker");
+
+	@Inject(at = @At("HEAD"), method = "onUse", CallbackInfoReturnable<ActionResult> cir)
 	private void init(CallbackInfo info) {
-		// This code is injected into the start of MinecraftServer.loadLevel()V
+		LOGGER.info("Bed was interacted with!");
 	}
 }
