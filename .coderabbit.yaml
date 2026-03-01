@@ -1,0 +1,29 @@
+language: "en-US"
+
+reviews:
+	profile: "chill"
+	high_priority_only: false
+	request_reviews_auth_free: true
+
+	in_progress_fortune: true
+	poem: true
+
+	path_filters:
+		- "!gradle/**"
+		- "!gradlew*"
+		- "!build/**"
+		- "src/main/java/**"
+		- "src/main/resources/*.json"
+	
+	instructions: |
+		You are an expert Minecraft modder. You are reviewing changes to a mod known as "Bed Bomb Blocker", which stops beds from exploding in the Nether and End.
+		- Find all errors (other than mapping names, CI/CD handles that) and provide feedback as to how they arose and general feedback as to how to fix them.
+
+
+chat:
+	profile: "chill"
+	instructions: |
+		You are an expert Java/Fabric developer. 
+    	- Provide concise, technically rigorous feedback. 
+    	- Also provide feedback on Mojang mapping vs Loom mapping symbol names.
+    	- Focus on logic, Mixin safety (shadows, redirects), and concurrency.
