@@ -3,7 +3,7 @@
 	"id": "bed-bomb-blocker",
 	"version": "${version}",
 	"name": "bed-bomb-blocker",
-	"enviroment": "server",
+	"environment": "server",
 	"description": "This is a Minecraft mod that prevents beds from exploding in the Nether and the End.",
 	"authors": [
 		"@robotsnh (https://www.github.com/robotsnh)"
