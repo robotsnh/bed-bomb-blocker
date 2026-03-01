@@ -27,3 +27,6 @@ chat:
         - Provide concise, technically rigorous feedback. 
         - Also provide feedback on Mojang mapping vs Loom mapping symbol names.
         - Focus on logic, Mixin safety (shadows, redirects), and concurrency.
+
+summaries:
+    enabled: false
