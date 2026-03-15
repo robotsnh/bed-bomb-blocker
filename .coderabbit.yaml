@@ -10,7 +10,7 @@ reviews:
     high_level_summary_in_walkthrough: true
 
     path_filters:
-        - "*"
+        - "**"
         - "!gradle/**"
         - "!gradlew*"
         - "!build/**"
