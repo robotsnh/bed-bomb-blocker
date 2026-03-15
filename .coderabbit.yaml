@@ -10,9 +10,10 @@ reviews:
 
     in_progress_fortune: true
     poem: true
+    high_level_summary_in_walkthrough: true
 
     path_filters:
-        - "*"
+        - "**"
         - "!gradle/**"
         - "!gradlew*"
         - "!build/**"
