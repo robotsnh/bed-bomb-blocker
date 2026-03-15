@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Copyright (c) robotsnh and project contributors
+
 package net.robotsnh.minecraft_mods.bed_bomb_blocker.mixin;
 
 import net.minecraft.server.MinecraftServer;

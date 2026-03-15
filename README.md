@@ -1,3 +1,6 @@
+[comment] SPDX-License-Identifier: GPL-3.0-or-later
+[comment] Copyright (c) robotsnh and project contributors
+
 # Bed Bomb Blocker
 ![License: AGPL](https://img.shields.io/badge/license-AGPL-brightgreen?label=license)
 
