@@ -10,11 +10,11 @@ reviews:
     high_level_summary_in_walkthrough: true
 
     path_filters:
+        - "*"
         - "!gradle/**"
         - "!gradlew*"
         - "!build/**"
-        - "src/main/java/**"
-        - "src/main/resources/*.json"
+        - "!LICENSE"
 	
     instructions: |
         You are an expert Minecraft modder. You are reviewing changes to a mod known as "Bed Bomb Blocker", which stops beds from exploding in the Nether and End.
