@@ -5,7 +5,8 @@
 	"name": "bed-bomb-blocker",
 	"description": "A Minecraft mod designed to stop beds from exploding in the Nether and End.",
 	"authors": [
-		"Me!"
+		"@robotsnh (https://www.github.com/robotsnh)",
+		"@community (https://www.github.com/community)"
 	],
 	"contact": {
 		"sources": "https://www.github.com/robotsnh/bed-bomb-blocker"
