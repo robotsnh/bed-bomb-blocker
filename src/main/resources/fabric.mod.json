@@ -8,8 +8,7 @@
 		"Me!"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://www.github.com/robotsnh/bed-bomb-blocker"
 	},
 	"license": "GPL-3.0-or-later",
 	"icon": "assets/bed-bomb-blocker/icon.png",
