@@ -1,3 +1,6 @@
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+<!-- Copyright (c) robotsnh and project contributors -->
+
 # Bed Bomb Blocker
 ![License: AGPL](https://img.shields.io/badge/license-AGPL-brightgreen?label=license)
 ![Language: Java](https://img.shields.io/badge/language-Java-orange?label=language)
