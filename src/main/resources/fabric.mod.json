@@ -2,16 +2,16 @@
 	"schemaVersion": 1,
 	"id": "bed-bomb-blocker",
 	"version": "${version}",
-	"name": "bed-bomb-blocker",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Bed Bomb Blocker",
+	"description": "A Minecraft mod designed to stop beds from exploding in the Nether and End.",
 	"authors": [
-		"Me!"
+		"@robotsnh (https://www.github.com/robotsnh)",
+		"@community (https://www.github.com/community)"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://www.github.com/robotsnh/bed-bomb-blocker"
 	},
-	"license": "CC0-1.0",
+	"license": "GPL-3.0-or-later",
 	"icon": "assets/bed-bomb-blocker/icon.png",
 	"environment": "*",
 	"entrypoints": {
