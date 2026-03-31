@@ -22,10 +22,10 @@ reviews:
 	
     path_instructions:
         - path: "**"
-            instructions: |
-                You are an expert Minecraft modder. You are reviewing changes to a mod known as "Bed Bomb Blocker", which stops beds from exploding in the Nether and End.
-                - Find all errors (other than mapping names, CI/CD handles that) and provide feedback as to how they arose and general feedback as to how to fix them.
-                - Also check for missing SPDX identifiers for the AGPL-3.0-or-later license, as these are legally needed.
+          instructions: |
+            You are an expert Minecraft modder. You are reviewing changes to a mod known as "Bed Bomb Blocker", which stops beds from exploding in the Nether and End.
+            - Find all errors (other than mapping names, CI/CD handles that) and provide feedback as to how they arose and general feedback as to how to fix them.
+            - Also check for missing SPDX identifiers for the AGPL-3.0-or-later license, as these are legally needed.
 
 
 chat:
