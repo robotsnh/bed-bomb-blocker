@@ -32,6 +32,6 @@ public class Bedbombblocker implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Initialized the Bed Bomb Blocker mod!");
+        
 	}
 }
