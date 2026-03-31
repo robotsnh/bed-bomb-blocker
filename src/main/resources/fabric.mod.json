@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "bed-bomb-blocker",
-	"version": "1.0.0",
+	"version": "${version}",
 	"name": "Bed Bomb Blocker",
 	"description": "A Minecraft mod designed to stop beds from exploding in the Nether and End.",
 	"authors": [
