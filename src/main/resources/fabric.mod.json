@@ -4,10 +4,18 @@
 	"version": "${version}",
 	"name": "Bed Bomb Blocker",
 	"description": "A Minecraft mod designed to stop beds from exploding in the Nether and End.",
-	"authors": [
-		"@robotsnh (https://www.github.com/robotsnh)",
-		"@community (https://www.github.com/community)"
-	],
+	"authors": [{
+		"name": "robotsnh",
+		"contact": {
+			"homepage": "https://www.github.com/robotsnh"
+		}
+	}],
+	"contributors": [{
+		"name": "Project contributors",
+		"contact": {
+			"homepage": "https://www.github.com/robotsnh/bed-bomb-blocker/graphs/contributors"
+		}
+	}],
 	"contact": {
 		"sources": "https://www.github.com/robotsnh/bed-bomb-blocker",
 		"issues": "https://www.github.com/robotsnh/bed-bomb-blocker/issues"
