@@ -11,7 +11,7 @@
 	"contact": {
 		"sources": "https://www.github.com/robotsnh/bed-bomb-blocker"
 	},
-	"license": "GPL-3.0-or-later",
+	"license": "AGPL-3.0-or-later",
 	"icon": "assets/bed-bomb-blocker/icon.png",
 	"environment": "*",
 	"entrypoints": {
