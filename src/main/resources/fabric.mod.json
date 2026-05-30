@@ -25,7 +25,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.robotsnh.minecraft_mods.bed_bomb_blocker.Bedbombblocker"
+			"net.robotsnh.minecraft_mods.bed_bomb_blocker.BedBombBlocker"
 		]
 	},
 	"mixins": [
