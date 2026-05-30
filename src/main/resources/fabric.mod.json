@@ -9,7 +9,8 @@
 		"@community (https://www.github.com/community)"
 	],
 	"contact": {
-		"sources": "https://www.github.com/robotsnh/bed-bomb-blocker"
+		"sources": "https://www.github.com/robotsnh/bed-bomb-blocker",
+		"issues": "https://www.github.com/robotsnh/bed-bomb-blocker/issues"
 	},
 	"license": "AGPL-3.0-or-later",
 	"icon": "assets/bed-bomb-blocker/icon.png",
