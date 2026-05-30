@@ -7,18 +7,18 @@
 	"authors": [{
 		"name": "robotsnh",
 		"contact": {
-			"homepage": "https://www.github.com/robotsnh"
+			"homepage": "https://github.com/robotsnh"
 		}
 	}],
 	"contributors": [{
 		"name": "Project contributors",
 		"contact": {
-			"homepage": "https://www.github.com/robotsnh/bed-bomb-blocker/graphs/contributors"
+			"homepage": "https://github.com/robotsnh/bed-bomb-blocker/graphs/contributors"
 		}
 	}],
 	"contact": {
-		"sources": "https://www.github.com/robotsnh/bed-bomb-blocker",
-		"issues": "https://www.github.com/robotsnh/bed-bomb-blocker/issues"
+		"sources": "https://github.com/robotsnh/bed-bomb-blocker",
+		"issues": "https://github.com/robotsnh/bed-bomb-blocker/issues"
 	},
 	"license": "AGPL-3.0-or-later",
 	"icon": "assets/bed-bomb-blocker/icon.png",
