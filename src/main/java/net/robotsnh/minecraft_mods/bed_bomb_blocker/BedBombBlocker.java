@@ -8,7 +8,7 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Bedbombblocker implements ModInitializer {
+public class BedBombBlocker implements ModInitializer {
 	public static final String MOD_ID = "bed-bomb-blocker";
 
 	// The logger is used to write text to the console and the log file.
