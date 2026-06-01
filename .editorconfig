@@ -1,0 +1,32 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Copyright (c) robotsnh and project contributors
+
+root = true
+
+# Targets all files
+[*]
+	# The character set, or an encoding type, of all files should be UTF-8, which only allows 8-bit characters
+	charset = utf-8
+	# These are standard Unix-style line endings
+	end_of_line = lf
+	# Make sure every file ends with a newline for POSIX standard compliance
+	insert_final_newline = true
+	# We want to remove any unnecessary end-of-line whitespace upon saving
+	trim_trailing_whitespace = true
+	# Use tabs, which are more customizable, for indent instead of spaces
+	indent_style = tab
+
+# Windows batch files (the equivalent of shell scripts) need CRLF line endings to run on Windows
+[*.bat]
+	end_of_line = crlf
+
+# Our Gradle wrapper JAR binary file needs special properties to stop it from breaking
+[*.jar]
+	# The character set should be "unset", meaning that there's no specified standard
+	charset = unset
+	# The line ending should also be "unset"
+	end_of_line = unset
+	# If we, by default, have an ending newline, the binary will completely break, so we need to remove it
+	insert_final_newline = false
+	# The same is true for end-of-line whitespace; if it's removed, the whole JAR and build may break
+	trim_trailing_whitespace = false
