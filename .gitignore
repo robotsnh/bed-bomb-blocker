@@ -67,3 +67,6 @@ remappedSrc/
 
 #OS specific files
 .DS_Store
+
+# Vim stuff
+.vim
