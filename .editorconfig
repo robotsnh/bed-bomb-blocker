@@ -1,6 +1,21 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 # Copyright (c) robotsnh and project contributors
 
+# This is our file used to standardize configuration and formatting across text editors and IDEs.
+# Since many text editors don't enforce this by default, you may need to download extensions to do so.
+# On VS Code, you can download the EditorConfig extension (see https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig.) After that, these settings will be enforced.
+# Using Neovim version 0.9.0 or higher (you can check your version by running `nvim --version` in your preferred shell), there is built-in support for .editorconfig files. If you are on a pre-0.9.0 version, you will have to use the method for `vim` described below, which also works on Neovim.
+# If you're using Vim, you'll need to download the plugin 'editorconfig/editorconfig-vim' with your chosen plugin manager in your `.vimrc` file. Then, restart Vim. If using Vundle or `vim-plug`, you may have to run `:PluginInstall` or `:PlugInstall`, respectively, after restarting Vim. You will also need to have Vim Python support (you can check by running `:echo has('python3')` in Vim; if it returns 1, you're good to go) or the C Editorconfig core, which is available as `editorconfig` on APT and Homebrew, and `editorconfig-core-c` on Pacman.
+# `vi` does not support `.editorconfig` files. For this project, it is highly recommended to temporarily switch to Vim or Neovim.
+# IntelliJ Idea and all other JetBrains IDEs enforce `.editorconfig` files, though it may be disabled by default. To make sure it's enabled, go to your settings menu (Cmd+, on macOS, Ctrl+Alt+S on Linux and Windows), then navigate to Editor > Code Style, and ensure that Enable EditorConfig Support is checked. To apply EditorConfig to your changes on this project, right-click the root directory (which should be `bed-bomb-blocker`) in the Project sub-window, then click on Reformat Code.
+# For Visual Studio, `.editorconfig` files are enforced by default. No settings tweaks are needed.
+# For Eclipse, go to Help -> Eclipse Marketplace when inside the IDE. Then, type EditorConfig in the search box. Find EditorConfig Eclipse in the menu, then click Install and accept the license terms. When prompted, restart Eclipse. To verify installation, go to Window -> Preferences (on macOS, Eclipse -> Settings). Look for EditorConfig in the sidebar, then ensure that it's enabled.
+# For Sublime Text, you must first have Package Control installed. Then, open the Command Palette with Ctrl+Shift+P (or Cmd+Shift+P on macOS), then select "Package Control: Install Package". Then, search for EditorConfig and choose "install".
+# For EMACS, just run the command `M-x package-install RET editorconfig RET` in EMACS. (M is Meta and RET is return.) Then, add the following to your config file (`~/.emacs` or `~/.emacs.d/init.el`): `(editorconfig-mode 1)`.
+# For Notepad++, go to the top menu and select Plugins - Plugin Admin. Then, type EditorConfig in the search bar of the Available tab. Check the box next to "EditorConfig", then click Install in the top right corner. Click yes when prompted to restart; it should run in the background after that.
+# Neither Ed nor Nano support `.editorconfig` files. For this project, it is highly recommended to temporarily switch to another editor.
+# Happy coding!
+
 root = true
 
 # Targets all files
