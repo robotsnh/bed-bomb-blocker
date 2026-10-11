@@ -3,7 +3,7 @@
 
 # This is our file used to standardize configuration and formatting across text editors and IDEs.
 # Since many text editors don't enforce this by default, you may need to download extensions to do so.
-# On VS Code, you can download the EditorConfig extension (see https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig.) After that, these settings will be enforced.
+# On VS Code, you can download the EditorConfig extension (see https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig). After that, these settings will be enforced.
 # Using Neovim version 0.9.0 or higher (you can check your version by running `nvim --version` in your preferred shell), there is built-in support for .editorconfig files. If you are on a pre-0.9.0 version, you will have to use the method for `vim` described below, which also works on Neovim.
 # If you're using Vim, you'll need to download the plugin 'editorconfig/editorconfig-vim' with your chosen plugin manager in your `.vimrc` file. Then, restart Vim. If using Vundle or `vim-plug`, you may have to run `:PluginInstall` or `:PlugInstall`, respectively, after restarting Vim. You will also need to have Vim Python support (you can check by running `:echo has('python3')` in Vim; if it returns 1, you're good to go) or the C Editorconfig core, which is available as `editorconfig` on APT and Homebrew, and `editorconfig-core-c` on Pacman.
 # `vi` does not support `.editorconfig` files. For this project, it is highly recommended to temporarily switch to Vim or Neovim.
@@ -20,7 +20,7 @@ root = true
 
 # Targets all files
 [*]
-	# The character set, or an encoding type, of all files should be UTF-8, which only allows 8-bit characters
+	# The character set, or an encoding type, of all files should be UTF-8, which is the standard format for characters
 	charset = utf-8
 	# These are standard Unix-style line endings
 	end_of_line = lf
