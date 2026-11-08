@@ -16,8 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import net.robotsnh.minecraft_mods.bed_bomb_blocker.BedBombBlocker;
 
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -26,10 +25,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(BedBlock.class)
-public class BedBlockMixin {
-        @Unique
-       	private static final Logger LOGGER = LoggerFactory.getLogger("bed-bomb-blocker");
-        
+public class BedBlockMixin { 
         @Inject(at = @At("HEAD"), method = "useWithoutItem", cancellable = true)
         private void onBedInteraction(
                 BlockState state,
@@ -41,7 +37,7 @@ public class BedBlockMixin {
         {
                 // This is to ensure the log message isn't printed twice
                 if (!world.isClientSide()) {
-                        LOGGER.info("Player {} interacted with a bed", player.getName().getString());
+                        BedBombBlocker.LOGGER.info("Player {} interacted with a bed", player.getName().getString());
                 }
 
                 // Now, we check whether beds explode in the player's dimension
@@ -51,7 +47,7 @@ public class BedBlockMixin {
                         if (!world.isClientSide()) {
                                 // If beds do explode, we need to cancel the explosion and log a message
                                 cir.setReturnValue(InteractionResult.SUCCESS);
-                                LOGGER.info("Bed explosion by player {} cancelled!", player.getName().getString());
+                                BedBombBlocker.LOGGER.info("Bed explosion by player {} cancelled!", player.getName().getString());
                                 // We also should display a player hotbar message
                                 player.displayClientMessage(Component.literal("Beds can't explode in this world!"), true);
                         }
