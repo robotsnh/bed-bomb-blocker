@@ -25,7 +25,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(BedBlock.class)
-public class BedBlockMixin { 
+class BedBlockMixin { 
         @Inject(at = @At("HEAD"), method = "useWithoutItem", cancellable = true)
         private void onBedInteraction(
                 BlockState state,
