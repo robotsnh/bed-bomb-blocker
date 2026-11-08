@@ -6,6 +6,7 @@ package net.robotsnh.minecraft_mods.bed_bomb_blocker.mixin;
 // We are using Mojang mappings here instead of community mappings, so class
 // names in imports differ from the community mappings.
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.attribute.BedRule;
@@ -51,6 +52,8 @@ public class BedBlockMixin {
                                 // If beds do explode, we need to cancel the explosion and log a message
                                 cir.setReturnValue(InteractionResult.SUCCESS);
                                 LOGGER.info("Bed explosion by player {} cancelled!", player.getName().getString());
+                                // We also should display a player hotbar message
+                                player.displayClientMessage(Component.literal("Beds can't explode in this world!"), true);
                         }
                 }
         }
