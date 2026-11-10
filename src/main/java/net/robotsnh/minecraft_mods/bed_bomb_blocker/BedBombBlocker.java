@@ -12,7 +12,10 @@ import org.slf4j.LoggerFactory;
  * The mod initialization class for the Bed Bomb Blocker mod.
  */
 public class BedBombBlocker implements ModInitializer {
-	private BedBombBlocker () {
+	/**
+	 * The constructor for the mod initializer.
+	 */
+	public BedBombBlocker () {
 		// Doesn't do anything, just here to stop Javadoc from yelling
 		// at us.
 	}
