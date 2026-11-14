@@ -11,13 +11,11 @@ import org.slf4j.LoggerFactory;
 /**
  * The mod initialization class for the Bed Bomb Blocker mod.
  * @since 1.0.0
- * @author robotsnh
  */
 public class BedBombBlocker implements ModInitializer {
 	/**
 	 * The constructor for the mod initializer.
 	 * @since 1.0.0
-	 * @author robotsnh
 	 */
 	public BedBombBlocker () {
 		// Doesn't do anything, just here to stop Javadoc from yelling
@@ -27,14 +25,12 @@ public class BedBombBlocker implements ModInitializer {
 	/**
 	 * The ID of the mod when using the logger.
 	 * @since 1.0.0
-	 * @author robotsnh
 	 */
 	public static final String MOD_ID = "bed-bomb-blocker";
 
 	/**
 	 * The logger is used to write text to the console in a formatted way.
 	 * @since 1.0.0
-	 * @author robotsnh
 	 */
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
@@ -46,7 +42,6 @@ public class BedBombBlocker implements ModInitializer {
 	 * Bed Bomb Blocker mod!"
 	 *
 	 * @since 1.0.0
-	 * @author robotsnh
 	 */
 	@Override
 	public void onInitialize() {
