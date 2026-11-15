@@ -25,13 +25,13 @@ Installation steps:
 
 ## Building and Development
 
-(Note: you will need a valid Java 21 or newer JVM and `git` installed, as well as a valid shell.)
+(Note: you will need a valid Java 23 JDK and `git` installed, as well as a valid shell. For a JDK, this project's maintainers recommend the [Eclipse Temurin JDK](https://adoptium.net/temurin/releases?version=23).)
 ```bash
 git clone https://github.com/robotsnh/bed-bomb-blocker.git
 cd bed-bomb-blocker
 ./gradlew build
 ```
-The compiled JAR file can be then found in `build/libs`.
+The compiled JAR file can be then found in `build/libs`. The correct file is the one not ending in the `-dev` or `-sources` suffix.
 (Note: you can also run `./gradlew runClient` to start a test client, `./gradlew runServer` to start a test server, or `./gradlew javadoc` to generate documentation.)
 
 ## License
